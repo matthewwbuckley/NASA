@@ -7,12 +7,10 @@ import rootReducer from './reducers/root'
 const initialState = {}
 const middleware = [thunk]
 
-const store = createStore(() => {
-  return(
-    rootReducer,
-    initialState,
-    applyMiddleware(...middleware)
-  )
-})
+const store = createStore(
+  rootReducer,
+  initialState,
+  applyMiddleware(...middleware)
+)
 
 export default store
