@@ -1,0 +1,33 @@
+.progressive-img-container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+@mixin progressive-img-base {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+
+.progressive-img-sd {
+  @include progressive-img-base();
+  filter: blur(-10px);
+  z-index: 10;
+
+  transition: opacity 1s ease-in-out;
+}
+
+.hidden {
+  opacity: 0
+}
+
+.progressive-img-hd {
+  @include progressive-img-base();
+  z-index: 5;
+}

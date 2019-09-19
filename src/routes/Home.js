@@ -3,20 +3,21 @@ import { connect } from 'react-redux'
 import { fetchApod } from '../store/actions/apodActions'
 import apodReducer from '../store/reducers/apodReducer'
 
+import ProgressiveLoader from '../components/utility/ProgressiveLoader'
+
 class Home extends React.Component {
   componentDidMount() {
     this.props.fetchApod()
   }
 
   render() {
-    let image = null;
-
+    let data = this.props.apod.data ? this.props.apod.data : {url: null, hdurl: null}
 
     return (
       <div>
-        <h1>HOME</h1>
-        {JSON.stringify(this.props.apod)}
-        <img src={this.props.apod.data.hdurl}></img>
+        <ProgressiveLoader url={data.url} hdurl={data.hdurl} >
+          <div class="info">HELLO</div>
+        </ProgressiveLoader>
       </div>
     )
   }

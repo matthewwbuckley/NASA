@@ -1,3 +1,6 @@
-body {
-  background-color: orangered;
+@import '_specific';
+
+* {
+  margin: 0;
+  padding: 0;
 }
