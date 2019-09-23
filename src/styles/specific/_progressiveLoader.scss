@@ -15,9 +15,17 @@
 }
 
 
-.progressive-img-sd {
+.progressive-img-child {
   @include progressive-img-base();
   filter: blur(-10px);
+  opacity: 1;
+
+  transition: opacity 1s ease-in-out;
+}
+
+
+.progressive-img-sd {
+  @include progressive-img-base();
   z-index: 10;
 
   transition: opacity 1s ease-in-out;
@@ -30,4 +38,6 @@
 .progressive-img-hd {
   @include progressive-img-base();
   z-index: 5;
+
+  transition: opacity 1s ease-in-out;
 }

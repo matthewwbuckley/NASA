@@ -1,2 +1,17 @@
 @import './specific/_progressiveLoader';
-@import './specific/_infoWindow'
+@import './specific/_infoWindow';
+
+
+#main-container {
+  height: 100%;
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 500px;
+  grid-template-rows: 100px 1fr 1fr;
+
+  @media screen and (max-width: 600px) {
+    grid-template-columns: 0fr 0fr 1fr;
+    grid-template-rows: 100px 1fr 1fr;
+  }
+}

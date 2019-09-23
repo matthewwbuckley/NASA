@@ -1,6 +1,35 @@
-.info {
-margin: 20px;
-padding: 20px;
-background-color: white;
-color: red;
+
+.info-spacer {
+  padding: 20px;
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.info-outer {
+  border: 1px solid $info-bg;
+  padding: 3px;
+
+  box-shadow: 0px 0px 4px 2px rgba($info-bg, 0.2), 0px 0px 4px 2px rgba($info-bg, 0.2) inset;
+}
+
+.info-inner {
+  background-color: rgba($info-bg, 0.6);
+  padding: 10px;
+  box-shadow: 0px 0px 4px 2px rgba($info-bg, 0.4) inset;
+  backdrop-filter: blur(10px);
+
+  color: $info-color;
+}
+
+.info-title {
+  font-size: 20px;
+}
+
+.info-explination {
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.info-copyright {
+
 }

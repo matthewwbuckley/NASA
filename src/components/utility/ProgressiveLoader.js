@@ -16,7 +16,6 @@ class ProgressiveLoader extends React.Component {
   }
 
   componentWillReceiveProps(nextProps){
-    console.log(nextProps)
     if(this.props.url !== nextProps.url){
       this.sdRef.current.style.backgroundImage = `url(${nextProps.url})`
     }
@@ -33,27 +32,25 @@ class ProgressiveLoader extends React.Component {
     return (
       <div className='progressive-img-container'>
         <div 
+          ref={this.sdRef} 
+          className={`progressive-img-sd ${hasLoadedHD ? 'hidden' : ''}`} 
+        />
+        <div 
           ref={this.hdRef}
-          className={`progressive-img-hd`}
-          //style={{backgroundImage: `url(${this.props.hdurl})`}}
-          
+          className={`progressive-img-hd`}          
         >
-          <div 
-            ref={this.sdRef} 
-            className={`progressive-img-sd ${hasLoadedHD ? 'hidden' : ''}`} 
-          />
           <img
             className='progressive-img-hd'
             onLoad={this.onLoad}
             src={this.props.hdurl} 
             style={{display:'none'}}
           />
-          {this.props.children}
+          <div className={`'progressive-img-child ${hasLoadedHD ? '' : 'hidden'}`}>
+            {this.props.children}
+          </div>
         </div>
         <div 
-          
         >
-          {this.props.children}
         </div>
       </div>
     )

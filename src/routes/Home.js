@@ -4,6 +4,7 @@ import { fetchApod } from '../store/actions/apodActions'
 import apodReducer from '../store/reducers/apodReducer'
 
 import ProgressiveLoader from '../components/utility/ProgressiveLoader'
+import InfoWindow from '../components/InfoWindow'
 
 class Home extends React.Component {
   componentDidMount() {
@@ -16,7 +17,9 @@ class Home extends React.Component {
     return (
       <div>
         <ProgressiveLoader url={data.url} hdurl={data.hdurl} >
-          <div class="info">HELLO</div>
+          <div id="main-container">
+            <InfoWindow />
+          </div>
         </ProgressiveLoader>
       </div>
     )
